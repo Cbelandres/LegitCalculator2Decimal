@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     double firstNumber = Double.parseDouble(previousNumber);
                     double percentage = Double.parseDouble(currentNumber) / 100;
                     result = firstNumber * percentage;
-                    display.setText(String.valueOf(result));
+                    display.setText(String.format("%.2f", result));
                     currentNumber = String.valueOf(result);
                     previousNumber = "";
                     operator = "";
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public void onEqualsClick(View view) {
         if (!previousNumber.isEmpty() && !currentNumber.isEmpty()) {
             computeResult();
-            display.setText(String.valueOf(result));
+            display.setText(String.format("%.2f", result));
             currentNumber = String.valueOf(result);
             previousNumber = "";
             operator = "";
